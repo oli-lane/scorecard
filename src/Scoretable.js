@@ -5,7 +5,7 @@ import Cell from "./Cell.js";
 const Scoretable = () => {
     return (
         <Scoregrid>
-            {Array(4)
+            {Array(5)
                 .fill()
                 .map((m, i) => {
                     return (
