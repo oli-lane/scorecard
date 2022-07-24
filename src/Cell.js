@@ -1,5 +1,5 @@
 import React, {useCallback, useState, memo, useMemo, Component } from "react";
-import { InputCell, HeaderCell } from "./styles";
+import { Inputcell, Headercell } from "./styles";
 
 /*
 class Cell extends Component {
@@ -31,7 +31,7 @@ const Cell = ({rowIndex, columnIndex })
 
 
 return (
-    <HeaderCell
+    <Headercell
 
     />
 )
