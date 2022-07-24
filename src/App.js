@@ -1,16 +1,16 @@
-import logo from './logo.svg';
 import './App.css';
+import React from "react";
+import { Reset } from "styled-reset";
 
-function App() {
+import Scoretable from "./Scoretable.js";
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Golf Scorecard
-        </p>
-      </header>
-    </div>
+    <>
+      <Reset />
+      <Scoretable/>
+    </>
   );
-}
+};
 
 export default App;
