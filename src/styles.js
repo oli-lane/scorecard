@@ -2,9 +2,10 @@ import styled from "styled-components";
 
 export const Scoregrid = styled.div`
     display: grid;
-    grid-template-colums: 32px repeat(
-        ${20}, 90px
-    );
+    grid-template-columns: 32px repeat(
+        20,
+        90px
+      );
 `;
 
 export const Headercell = styled.div`
