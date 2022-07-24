@@ -30,4 +30,10 @@ const Cell = ({rowIndex, columnIndex })
 
 
 
+return (
+    <HeaderCell
+
+    />
+)
+
 export default memo(Cell);
