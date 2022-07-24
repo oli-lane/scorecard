@@ -4,7 +4,7 @@ export const Scoregrid = styled.div`
     display: grid;
     grid-template-columns: 32px repeat(
         20,
-        90px
+        60px
       );
 `;
 

@@ -7,6 +7,11 @@ import Scoretable from "./Scoretable.js";
 const App = () => {
   return (
     <>
+      <div>
+        <p align="center">
+          Golf Scorecard
+        </p>
+      </div>
       <Reset />
       <Scoretable/>
     </>
