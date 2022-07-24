@@ -9,7 +9,7 @@ const Scoretable = () => {
                 .map((m, i) => {
                     return (
                         <Fragment key={i}>
-                            {Array(19)
+                            {Array(20)
                                 .fill()
                                 .map((n,j) => {
                                     return(
