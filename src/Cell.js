@@ -27,9 +27,15 @@ class Cell extends Component {
 */
 
 const Cell = ({rowIndex, columnIndex }) => {
-return (
-    <Headercell>{columnIndex}</Headercell>
-);
+    if (rowIndex == 0) {
+        return <Headercell>{columnIndex}</Headercell>
+    }
+    if (columnIndex == 0) {
+        return <Headercell>Player</Headercell>
+    }
+    return (
+        <Headercell>0</Headercell>
+    );
 }
 
 export default memo(Cell);
