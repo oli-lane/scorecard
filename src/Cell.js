@@ -26,14 +26,10 @@ class Cell extends Component {
 }
 */
 
-const Cell = ({rowIndex, columnIndex }) 
-
-
-
+const Cell = ({rowIndex, columnIndex }) => {
 return (
-    <Headercell
-
-    />
-)
+    <Headercell>{columnIndex}</Headercell>
+);
+}
 
 export default memo(Cell);

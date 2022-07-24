@@ -1,5 +1,6 @@
 import React, { useCallback, useState, Fragment } from "react";
 import { Scoregrid } from "./styles";
+import Cell from "./Cell.js";
 
 const Scoretable = () => {
     return (
@@ -16,7 +17,6 @@ const Scoretable = () => {
                                         <Cell 
                                             rowIndex={i}
                                             columnIndex={j}
-                                            setCellValue={0}
                                         />
                                     );
                                 })
