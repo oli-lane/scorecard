@@ -15,7 +15,8 @@ class Cell extends Component {
     }
 
     handleSubmit(event) {
-        
+        // should change something using this.state.value
+        event.preventDefault()
     }
 
     render () {
