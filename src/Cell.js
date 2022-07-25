@@ -15,6 +15,9 @@ const Cell = ({rowIndex, columnIndex }) => {
     if (columnIndex == 0) {
         return <Headercell>Player {rowIndex}</Headercell>
     }
+    if (columnIndex == 19) {
+        return <Headercell>-</Headercell>
+    }
     return (
         <Inputcell/>
     );
