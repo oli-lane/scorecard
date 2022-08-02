@@ -2,9 +2,14 @@ import React, {useCallback, useState, memo, useMemo, Component } from "react";
 import { Inputcell, Headercell } from "./styles";
 
 const Cell = ({rowIndex,columnIndex,setCellValue,currentValue,computeCell }) => {
+    const [edit, setEdit] = useState(false);
+    
     const value = useMemo(() => {
+        if (edit) {
+            return currentValue || "";
+        }
         return computeCell({row: rowIndex});
-    }, [rowIndex]
+    }, [rowIndex, computeCell, edit, currentValue]
     );
     
     const handleEdit = useCallback(
@@ -14,26 +19,28 @@ const Cell = ({rowIndex,columnIndex,setCellValue,currentValue,computeCell }) => 
             value: change.target.value
         });
     }, 
-        [rowIndex, columnName, setCellValue]
+        [rowIndex, columnIndex, setCellValue]
     );
-    if (rowIndex == 0 && columnIndex == 0) {
+    if (rowIndex === 0 && columnIndex === 0) {
         return <Headercell>Hole: </Headercell>
     }
-    if (rowIndex == 0 && columnIndex == 19) {
+    if (rowIndex === 0 && columnIndex === 19) {
         return <Headercell>Total: </Headercell>
     }
     
-    if (rowIndex == 0) {
+    if (rowIndex === 0) {
         return <Headercell>{columnIndex}</Headercell>
     }
-    if (columnIndex == 0) {
+    if (columnIndex === 0) {
         return <Headercell>Player {rowIndex}</Headercell>
     }
-    if (columnIndex == 19) {
-        return <Headercell>value={value}</Headercell>
+    if (columnIndex === 19) {
+        return <Headercell>{value}</Headercell>
     }
     return (
         <Inputcell>
+            onBlur={() => setEdit(false)}
+            onFocus={() => setEdit(true)}
             onChange={handleEdit}
             value={currentValue}
             type="text"
