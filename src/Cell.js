@@ -2,11 +2,9 @@ import React, {useCallback, useState, memo, useMemo, Component } from "react";
 import { Inputcell, Headercell } from "./styles";
 
 const Cell = ({rowIndex,columnIndex,setCellValue,currentValue,computeCell }) => {
-    const [edit, setEdit] = useState(false);
-
     const value = useMemo(() => {
         return computeCell({row: rowIndex});
-    }, [edit, computeCell, currentvalue, rowIndex]
+    }, [rowIndex]
     );
     
     const handleEdit = useCallback(
@@ -37,6 +35,7 @@ const Cell = ({rowIndex,columnIndex,setCellValue,currentValue,computeCell }) => 
     return (
         <Inputcell>
             onChange={handleEdit}
+            value={currentValue}
             type="text"
         </Inputcell>
     );
