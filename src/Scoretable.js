@@ -3,6 +3,27 @@ import { Scoregrid } from "./styles";
 import Cell from "./Cell.js";
 
 const Scoretable = () => {
+    const [entries, setEntries] = useState({});
+
+    const setCellValue = useCallback(
+        ({row, column, value}) => {
+            const tempEntries = { ...entries};
+            tempEntries[`${column}${row}`] = value;
+            setEntries(tempEntries);
+        },
+        [entries, setEntries]
+    );
+
+    const computeCell = useCallback(
+        ({row}) => {
+            let total = 0;
+            const holes = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18];
+            holes.forEach(colIndex => {
+                total += data[`${colIndex}${row}`];
+            });
+            return total;
+        }
+    );
     return (
         <Scoregrid>
             {Array(5)
@@ -17,6 +38,9 @@ const Scoretable = () => {
                                         <Cell 
                                             rowIndex={i}
                                             columnIndex={j}
+                                            setCellValue={setCellValue}
+                                            currentValue={data[`${j}${i}`]}
+                                            computeCell={computeCell}
                                         />
                                     );
                                 })
