@@ -1,4 +1,4 @@
-import React, {useCallback, useState, memo, useMemo, Component } from "react";
+import React, {useCallback, useState, memo, useMemo} from "react";
 import { Inputcell, Headercell } from "./styles";
 
 const Cell = ({rowIndex,columnIndex,setCellValue,currentValue,computeCell }) => {
@@ -38,13 +38,13 @@ const Cell = ({rowIndex,columnIndex,setCellValue,currentValue,computeCell }) => 
         return <Headercell>{value}</Headercell>
     }
     return (
-        <Inputcell>
+        <Inputcell
             onBlur={() => setEdit(false)}
             onFocus={() => setEdit(true)}
             onChange={handleEdit}
             value={currentValue}
             type="text"
-        </Inputcell>
+        />
     );
 }
 

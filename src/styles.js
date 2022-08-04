@@ -17,7 +17,6 @@ export const Headercell = styled.div`
 
 export const Inputcell = styled.input`
     padding: 0 4px:
-    text-align: center;
     :not(:focus) {
         text-align: center;
     }

@@ -14,15 +14,23 @@ const Scoretable = () => {
         [entries, setEntries]
     );
 
-    const computeCell = ({row}) => {
+    const computeCell = useCallback(
+        ({row}) => {
             let total = 0;
             const holes = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18];
             holes.forEach(colIndex => {
-                total += entries[`${colIndex}${row}`];
+                if (entries[`${colIndex}${row}`]) {
+                    total += Number(entries[`${colIndex}${row}`]);
+                }
             });
-            return total;
-        }
-    ;
+            try {
+                return total;
+            } catch(error) {
+                return "ERROR";
+            }
+        },
+        [entries]
+    );
     return (
         <Scoregrid>
             {Array(5)
@@ -40,6 +48,7 @@ const Scoretable = () => {
                                             setCellValue={setCellValue}
                                             currentValue={entries[`${j}${i}`]}
                                             computeCell={computeCell}
+                                            key={`${j}${i}`}
                                         />
                                     );
                                 })
