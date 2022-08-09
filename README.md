@@ -1,5 +1,5 @@
 # Golf Scorecard
-A simple interactive 18 hole golf scorecard
+A simple interactive 4 person, 18 hole golf scorecard
 
 Contributors: Oliver Lane and Nick Bircher; Cal Poly CS '25
 
