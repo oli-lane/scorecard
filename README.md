@@ -1,6 +1,7 @@
 # Golf Scorecard
 A simple interactive 18 hole golf scorecard
-Contributers: Oliver Lane and Nick Bircher; Cal Poly CS '25
+
+Contributors: Oliver Lane and Nick Bircher; Cal Poly CS '25
 
 # Inspiration
 Don't you hate creating makeshift scorecards in your Notes app whenever you play Mini Golf?
